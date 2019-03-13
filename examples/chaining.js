@@ -22,6 +22,21 @@ var addNewUserToDatabaseAsync = function(user) {
       return db.createAndSaveUserAsync(securedUser); // Return another promise
     });
 };
+// var addNewUserToDatabaseAsync = function(user, cb) {
+//   db.findUserInDatabase(user, (err, user)=>{
+//     if (user) {
+//       throw error;
+//     } else {
+//       db.hashPasswordAsync(user, (err, user)=>{
+//         db.createAndSaveUserAsync(user, ()=>{
+//           cb
+//         })
+//       })
+//     }
+//   })
+
+// }
+
 
 addNewUserToDatabaseAsync({ name: 'Dan', password: 'chickennuggets' })
   .then(function(savedUser) {

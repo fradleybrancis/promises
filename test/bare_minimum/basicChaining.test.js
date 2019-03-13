@@ -39,6 +39,7 @@ describe('Basic chaining', function() {
       // Make sure you return the chain! This will allow you to keep chaining promises
       // once the file has successfully been written
       // Must return a Bluebird promise. ES6 promise won't work here
+      console.log(fetchProfileAndWriteToFile(fileWithGithubHandle, fileToWriteTo));
       expect(fetchProfileAndWriteToFile(fileWithGithubHandle, fileToWriteTo)).to.be.an.instanceOf(Promise);
     });
 
